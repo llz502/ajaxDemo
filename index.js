@@ -19,8 +19,9 @@ var server = http.createServer(function(request, response){
                 response.setHeader('Content-Type', 'text/html;charset=utf-8')
                 response.end(string)
             }else if(path === '/xxx'){
+                var string = fs.readFileSync('./xxx')
                 response.setHeader('Content-Type', 'text/html;charset=utf-8')
-                response.end('Hello AJAX')
+                response.end(string)
             }else{
                 response.statusCode = 404
                 response.setHeader('Content-Type', 'text/html;charset=utf-8') 
